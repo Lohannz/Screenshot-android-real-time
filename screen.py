@@ -4,7 +4,7 @@ from unicodedata import name
 from ppadb.client import Client as AdbClient
 
 def connect():
-    client = AdbClient(host="127.0.0.1", port=5037) # Default is "127.0.0.1" and 5037
+    client = AdbClient(host="127.0.0.1", port=5037)
 
     devices = client.devices()
 
@@ -22,9 +22,18 @@ def connect():
 if __name__ == '__main__':
     device, client = connect()
 
-
 screenshot = device.screencap()
 
-with open('result.png', 'wb') as f: # save the screenshot as result.png
-    f.write(screenshot)
-    print('Saved screenshot!')
+
+directory = "/home/lohan/Documentos/refugio/foto/"
+filepath = directory + "print.png"
+
+for i in filepath:
+    print(i)
+    
+    with open(filepath, 'wb') as f: # save the screenshot as result.png
+        f.write(screenshot)
+        print('salvo!')
+
+
+
