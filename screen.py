@@ -1,3 +1,4 @@
+from ast import While
 import time
 from unicodedata import name
 
@@ -13,7 +14,7 @@ def connect():
         quit()
 
     device = devices[0]
-    namephone = 'SmartPhone conectado' 
+    namephone = 'smartphone conectado' 
     print(f'{namephone}')
 
     return device, client
@@ -24,14 +25,14 @@ if __name__ == '__main__':
 
 screenshot = device.screencap()
 
+import os
 
-directory = "/home/lohan/Documentos/refugio/foto/"
-filepath = directory + "print.png"
+x = os.listdir("/home/lohan/Documentos/refugio/foto/")
 
-for i in filepath:
-    print(i)
-    
-    with open(filepath, 'wb') as f: # save the screenshot as result.png
+
+
+filepath = "/home/lohan/Documentos/refugio/foto/" + "print.png"
+with open(filepath, 'wb') as f: # save the screenshot as result.png 
         f.write(screenshot)
         print('salvo!')
 
