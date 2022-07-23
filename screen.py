@@ -29,12 +29,23 @@ import os
 
 x = os.listdir("/home/lohan/Documentos/refugio/foto/")
 
+i = 1
 
-
-filepath = "/home/lohan/Documentos/refugio/foto/" + "print.png"
-with open(filepath, 'wb') as f: # save the screenshot as result.png 
+filepath = "/home/lohan/Documentos/refugio/foto/" + f"{i}print.png"
+for filepath in x:
+    i += 1
+    filepath = "/home/lohan/Documentos/refugio/foto/" + f"{i}print.png"
+    with open(filepath, 'wb') as f: 
+        f.write(screenshot)
+print('salvo!')
+if "1print.png" in x:
+    pass
+else:
+    with open(filepath, 'wb') as f: 
         f.write(screenshot)
         print('salvo!')
 
+
+    
 
 
